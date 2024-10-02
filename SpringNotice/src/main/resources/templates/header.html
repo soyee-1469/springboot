@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<header>
+    <div class="header-container">
+        <h1>하이미디어</h1>
+        <nav>
+            <ul>
+                <li><a th:href="@{/notice}">게시판</a></li>
+                <li><a th:href="@{/notice-write}">게시글작성</a></li>
+                <li><a th:href="@{/signup}">회원가입</a></li>
+                <li><a th:href="@{/login}">로그인</a></li>
+                <li><a href="#">로그아웃</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+</body>
+</html>

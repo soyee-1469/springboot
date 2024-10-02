@@ -17,4 +17,6 @@ public class MemberLoginRequestDTO {
                 .password(password)
                 .build();
     }
+
+
 }

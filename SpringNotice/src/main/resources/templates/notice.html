@@ -1,26 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../static/css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/table.css"/>
 </head>
-<body>
-<div id='con'>
 
-    <div id='header'>
+<div class="container">
+    <h1 class="title">게시판</h1>
+    <table class="post-table" >
+        <thead>
+        <tr>
+            <th >번호</th>
+            <th>제목</th>
+            <th>내용</th>
+            <th>날짜</th>
+            <th>작업</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="Notice : ${users}">
+            <td th:text="${user.id}"></td>
+            <td th:text="${user.userid}"></td>
+            <td th:text="${user.name}"></td>
+            <td th:text="${user.email}"></td>
+            <td>
+                <a th:href="@{/users/update/{id}(id=${user.id})}" class="btn btn-primary btn-sm">수정</a>
+                <!--            <td><a th:href="@{/users/update(id=${user.id})}" class="btn btn-primary btn-sm">수정</a>-->
+                <a th:href="@{/users/delete(id=${user.id},userid=${user.userid})}" class="btn btn-danger btn-sm">삭제</a>
+            </td>
+        </tr>
+        </tbody>
 
-    </div>
-    <div id='body'>
-        <h1>test</h1>
-    </div>
-    <div id='footer'>
-
-    </div>
+    </table>
+    <a th:href="@{/notice-write}"><button class="submit-btn">게시글 작성</button></a>
 
 </div>
 
-
-</body>
 </html>

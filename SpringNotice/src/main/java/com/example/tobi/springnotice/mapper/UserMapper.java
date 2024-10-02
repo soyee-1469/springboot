@@ -1,5 +1,6 @@
 package com.example.tobi.springnotice.mapper;
 
+import com.example.tobi.springnotice.model.Notice;
 import com.example.tobi.springnotice.model.User;
 import org.apache.ibatis.annotations.Mapper;
 
@@ -7,4 +8,7 @@ import org.apache.ibatis.annotations.Mapper;
 public interface UserMapper {
     void insertUser(User user);
     User findById(String userid, String password);
+    void loginUser(User user);
+
+
 }

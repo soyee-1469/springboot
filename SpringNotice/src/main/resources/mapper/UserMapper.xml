@@ -7,9 +7,13 @@
         INSERT INTO user(userid, password, email, name, tel)
         VALUES (#{userid}, #{password}, #{email}, #{name}, #{tel});
     </insert>
+    <select id="findById" parameterType="long" resultType="com.example.tobi.springnotice.model.User">
+        SELECT * FROM user WHERE id = #{id};
+    </select>
 
-    <select id="loginUser" resultType="com.example.tobi.springnotice.model.User">
-        SELECT * FROM user where userid;
+
+    <select id="loginUser" parameterType="String" resultType="com.example.tobi.springnotice.model.User">
+        SELECT * FROM user where userid = ${userid};
     </select>
 
 </mapper>

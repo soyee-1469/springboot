@@ -1,5 +1,6 @@
 package com.example.tobi.springnotice.dto;
 
+import com.example.tobi.springnotice.model.User;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -14,4 +15,7 @@ public class MemberResponseDTO {
     private String email;
     private String name;
     private int tel;
+
+
+
 }
